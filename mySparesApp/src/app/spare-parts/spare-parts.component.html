@@ -1,0 +1,38 @@
+<div>
+<div class="row">
+<div class="col"></div>
+<div class="col">
+	
+<form>
+  <div class="form-group form-inline mt-2">
+      <h5>Global Search: </h5><input class="form-control ml-2" type="text" [formControl]="filter"
+      (keyup)="onChangeEvent($event)"/>
+      <span class="clear ml-2" style="pt-0 pb-0" (click)="reset()">Clear</span> 
+  </div>
+</form>
+
+</div> 
+<div class="col"></div> 
+</div>
+
+<div style="overflow: scroll;"> 
+<table class="table table-striped">
+	<thead>
+  	<tr>
+    	<th *ngFor="let header of tableHeaders">{{header.value}}</th>
+  	</tr>
+  	</thead>
+  	<tbody>
+  		<tr *ngFor="let row of spareParts"> 		
+  		<td *ngFor="let header of tableHeaders">
+  		<span *ngIf="header.key == 'partPhotoLink'; else otherValue">
+  		<a href={{row[header.key]}}>View photo</a></span>
+  		<ng-template #otherValue>
+  		{{row[header.key]}}
+  		</ng-template>
+  		</td>
+  		</tr>
+  	</tbody>
+</table>
+</div>
+</div>
