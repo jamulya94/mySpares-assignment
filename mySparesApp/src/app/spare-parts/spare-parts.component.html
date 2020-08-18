@@ -19,7 +19,7 @@
 <table class="table table-striped">
 	<thead>
   	<tr>
-    	<th *ngFor="let header of tableHeaders">{{header.value}}</th>
+    	<th class="w-25" *ngFor="let header of tableHeaders">{{header.value}}</th>
   	</tr>
   	</thead>
   	<tbody>
@@ -32,6 +32,9 @@
   		</ng-template>
   		</td>
   		</tr>
+      <tr>
+        <span class="ml-2">Total itmes: {{spareParts.length}}</span>
+      </tr>
   	</tbody>
 </table>
 </div>

@@ -57,6 +57,7 @@ export class SparePartsComponent implements OnInit {
 
   reset = () => {
   		this.filter.setValue("");
+      this.spareParts = this.tableData;
   }
 
 
